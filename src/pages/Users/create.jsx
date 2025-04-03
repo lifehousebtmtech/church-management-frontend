@@ -60,7 +60,7 @@ const CreateUser = () => {
 
     try {
       setSaving(true);
-      await api.users.create(formData);
+      await api.churchUsers.create(formData);
       navigate('/users');
     } catch (error) {
       setErrors({ submit: error.message });
