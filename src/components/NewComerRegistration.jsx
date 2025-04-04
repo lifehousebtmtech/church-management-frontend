@@ -34,7 +34,9 @@ const NewComerRegistration = ({ event, isEnabled, onAttendanceUpdate }) => {
         }
       };
       
-      const response = await fetch('http://localhost:5000/api/people/quick-register', {
+      const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+      // Check if the API_BASE_URL is defined
+      const response = await fetch(`${API_BASE_URL}/people/quick-register`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
